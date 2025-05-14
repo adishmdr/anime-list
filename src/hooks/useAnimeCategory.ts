@@ -1,8 +1,11 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_CATEGORY_ANIME } from '@/graphql/queries';
-import { GetCategoryAnimeQueryVariables, GetCategoryAnimeQueryResponse, MediaSort } from '@/graphql/types';
+
+
 import { Anime } from '@/types/anime';
+
+import { GET_CATEGORY_ANIME } from '@/lib/queries';
+import { GetCategoryAnimeQueryResponse, GetCategoryAnimeQueryVariables, MediaSort } from '@/types/generated/graphql';
 
 export const useAnimeCategory = (genre?: string, sort: MediaSort[] = [MediaSort.POPULARITY_DESC]) => {
     const { data, loading } = useQuery<GetCategoryAnimeQueryResponse, GetCategoryAnimeQueryVariables>(
