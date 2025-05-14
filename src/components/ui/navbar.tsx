@@ -24,7 +24,6 @@ interface NavbarProps {
 
 export function Navbar({ username, jobTitle, onLogout }: NavbarProps) {
     const bgColor = useColorModeValue('white', 'gray.900');
-    const secondaryTextColor = useColorModeValue('gray.600', 'gray.400');
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const handleLogoutConfirm = () => {

@@ -20,7 +20,6 @@ import { useDebounce } from '@/hooks/useDebounce';
 import { AnimeDetailsModal } from './ui/anime-details-modal';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import AnimeCard from './ui/anime-card';
-import { Navbar } from './ui/navbar';
 
 const ITEMS_PER_PAGE = 16;
 
@@ -85,10 +84,6 @@ export function AnimeList() {
         );
     }, [listData?.Page?.media, debouncedSearchQuery]);
 
-    const handleLogout = () => {
-        // Implement logout logic here
-        console.log('Logout clicked');
-    };
 
     if (listLoading) {
         return (

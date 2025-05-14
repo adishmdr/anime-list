@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Container, Heading, Text, Button, HStack } from '@chakra-ui/react';
+import { Box, Container } from '@chakra-ui/react';
 import { UserForm } from '@/components/user-form';
 import { AnimeList } from '@/components/anime-list';
 import { AnimeCategoryRow } from '@/components/anime-category-row';

@@ -9,7 +9,7 @@ interface User {
 
 interface UserContextType {
     user: User | null;
-    setUser: (user: User) => void;
+    setUser: (user: User | null) => void;
     updateUser: (updates: Partial<User>) => void;
 }
 
@@ -36,9 +36,8 @@ export function UserProvider({ children }: { children: ReactNode }) {
             handleSetUser(updatedUser);
         }
     };
-
     return (
-        <UserContext.Provider value={{ user, setUser: handleSetUser, updateUser }}>
+        <UserContext.Provider value={{ user, setUser: (newUser: User | null) => handleSetUser(newUser as User), updateUser }}>
             {children}
         </UserContext.Provider>
     );
